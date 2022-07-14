@@ -1,0 +1,319 @@
+@import "mixins/mixins";
+
+body{
+    overflow: hidden    ;
+}
+header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    padding: 0 30px;
+
+    // logo
+    .logo {
+        width: 200px;
+        height: 70px;
+
+        img {
+            width: 100%;
+            height: 60px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    //navbars
+    .navbars {
+        margin-left: 40px;
+
+        li {
+            display: inline-block;
+
+            a {
+                padding: 7px 14px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 14px;
+                transition: .3s ease-in;
+
+                &:hover {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+
+    // container-cart
+    .container-colors-cart {
+        width: 450px;
+        height: 260px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        .container--colors {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(288.08deg, #9A6A44 0%, #FFF4BC 28.13%, #AB6516 40.13%, #9C3E09 100%, #E7D4A6 100%);
+        }
+
+        .container--image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                opacity: .5;
+            }
+        }
+    }
+
+}
+
+.main {
+    width: 100%;
+    height: auto;
+
+    .section-primary {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 75%;
+        height: calc(100% - 70px);
+        background: #000;
+
+        .container-images {
+            display: flex;
+            width: 100%;
+            height: 450px;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .container-text {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 60px;
+            left: -10px;
+        }
+
+        .container--description {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    // section secondary
+    .section-secondary{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 25%;
+        height: calc(100% - 200px);
+        background: #000;
+        color: #fff;
+    }
+}
+
+.container-images {
+    .image-moto {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .overlay-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0));
+    }
+
+    .overlay-rigth {
+        position: absolute;
+        right: 18%;
+        top: 0;
+        width: 150px;
+        height: 100%;
+        background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0));
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 100px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, #000);
+        }
+    }
+
+    .overlay-top {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, #000);
+    }
+}
+
+.container-text {
+    .text-japon {
+        h1 {
+            font-size: 95px;
+            background: linear-gradient(288.08deg, #9A6A44 0%, #FFF4BC 28.13%, #AB6516 53.13%, #9C3E09 76.04%, #E7D4A6 100%);
+            -webkit-text-stroke: 2px transparent;
+            -webkit-background-clip: text;
+            color: rgba(0, 0, 0, 1);
+            z-index: 4;
+            position: relative;
+        }
+    }
+}
+
+.container--description {
+    // barre progress
+    .group-progressbars {
+        position: relative;
+        padding: 0 60px;
+
+        &::before {
+            cursor: pointer;
+            content: "<";
+            position: absolute;
+            left: 0;
+            top: -11px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        &::after {
+            cursor: pointer;
+            content: ">";
+            position: absolute;
+            right: 0;
+            top: -11px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .progressbars{
+            display: flex;
+            width: 250px;
+            height: 2px;
+
+            span {
+                display: block;
+                width: 100%;
+                height: 100%;
+               
+                &.left{
+                    width: 50%;
+                     background: rgba(167, 91, 18, 1);
+                }
+                &.rigth{
+                    width: 50%;
+                    background: #fff;
+                }
+                &::before {
+                    cursor: pointer;
+                    content: "2";
+                    position: absolute;
+                    left: 20px;
+                    top: -11px;
+                    color: #fff;
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+
+                &::after {
+                    cursor: pointer;
+                    content: "10";
+                    position: absolute;
+                    right: 20px;
+                    top: -11px;
+                    color: #fff;
+                    font-size: 15px;
+                    font-weight: 700;
+                }
+            }
+        }
+
+    }
+
+    // desctiption
+    .text-description{
+        width: 350px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .5);
+        text-align: justify;
+    }
+
+    // img mortisseur
+    .mortisseur{
+        width: 200px;
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+
+// section secondary
+.section-secondary{
+    .content{
+        height: 100px;
+        background: #000;
+        margin: 2px 0;
+        position: relative;
+        
+        .title-pivot{
+            position: absolute;
+            left: 0%;
+            right: 100%;
+            top:90.56%;
+            bottom: 50.47%;
+            transform: rotate(-90deg);
+            font-size: 15px;
+            font-family :'Segoe UI';
+            color: rgba(63, 62, 68, 1);
+
+        }
+        .d-cart{
+            position: absolute;
+            left: 20%;
+            top: 20%;
+
+            span{
+                font-size: 13px;
+                color:  rgba(255, 255, 255, .6);
+
+                &:nth-child(1){
+                    color:  rgba(255, 255, 255, .8);
+                }
+            }
+        }
+    }
+}
